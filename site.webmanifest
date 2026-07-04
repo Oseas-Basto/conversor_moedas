@@ -2,9 +2,9 @@
     "name": "Conversor de Moedas",
     "short_name": "Conversor",
     "description": "Conversor online gratuito de moedas e criptomoedas com cotações em tempo real.",
-    "id": "/conversor_moedas/",
-    "start_url": "/conversor_moedas/",
-    "scope": "/conversor_moedas/",
+    "id": "/",
+	"start_url": "/",
+	"scope": "/"
     "display": "standalone",
     "display_override": [
         "window-controls-overlay",
