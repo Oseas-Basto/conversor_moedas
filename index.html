@@ -167,20 +167,53 @@
                             <label for="fromCurrency">Moeda de origem</label>
 
                             <select id="fromCurrency">
-                                <option value="USD">🇺🇸 USD - Dólar Americano</option>
-                                <option value="EUR">🇪🇺 EUR - Euro</option>
-                                <option value="BRL">🇧🇷 BRL - Real Brasileiro</option>
-                                <option value="GBP">🇬🇧 GBP - Libra Esterlina</option>
-                                <option value="JPY">🇯🇵 JPY - Iene Japonês</option>
-                                <option value="CHF">🇨🇭 CHF - Franco Suíço</option>
-                                <option value="CAD">🇨🇦 CAD - Dólar Canadense</option>
-                                <option value="AUD">🇦🇺 AUD - Dólar Australiano</option>
-                                <option value="ARS">🇦🇷 ARS - Peso Argentino</option>
-                                <option value="BTC">₿ BTC - Bitcoin</option>
-                                <option value="ETH">Ξ ETH - Ethereum</option>
-                                <option value="USDT">₮ USDT - Tether</option>
-                                <option value="BNB">BNB - Binance Coin</option>
-                                <option value="SOL">SOL - Solana</option>
+                                <option value="USD" data-flag="us">USD - Dólar Americano</option>
+									<option value="BRL" data-flag="br">BRL - Real Brasileiro</option>
+									<option value="EUR" data-flag="eu">EUR - Euro</option>
+									<option value="GBP" data-flag="gb">GBP - Libra Esterlina</option>
+									<option value="JPY" data-flag="jp">JPY - Iene Japonês</option>
+									<option value="CHF" data-flag="ch">CHF - Franco Suíço</option>
+									<option value="CAD" data-flag="ca">CAD - Dólar Canadense</option>
+									<option value="AUD" data-flag="au">AUD - Dólar Australiano</option>
+									<option value="NZD" data-flag="nz">NZD - Dólar Neozelandês</option>
+									<option value="ARS" data-flag="ar">ARS - Peso Argentino</option>
+									<option value="CLP" data-flag="cl">CLP - Peso Chileno</option>
+									<option value="UYU" data-flag="uy">UYU - Peso Uruguaio</option>
+									<option value="MXN" data-flag="mx">MXN - Peso Mexicano</option>
+									<option value="CNY" data-flag="cn">CNY - Yuan Chinês</option>
+									<option value="HKD" data-flag="hk">HKD - Dólar de Hong Kong</option>
+									<option value="SGD" data-flag="sg">SGD - Dólar de Singapura</option>
+									<option value="KRW" data-flag="kr">KRW - Won Sul-Coreano</option>
+									<option value="INR" data-flag="in">INR - Rúpia Indiana</option>
+									<option value="RUB" data-flag="ru">RUB - Rublo Russo</option>
+									<option value="TRY" data-flag="tr">TRY - Lira Turca</option>
+									<option value="ZAR" data-flag="za">ZAR - Rand Sul-Africano</option>
+									<option value="SEK" data-flag="se">SEK - Coroa Sueca</option>
+									<option value="NOK" data-flag="no">NOK - Coroa Norueguesa</option>
+									<option value="DKK" data-flag="dk">DKK - Coroa Dinamarquesa</option>
+									<option value="PLN" data-flag="pl">PLN - Zlóti Polonês</option>
+									<option value="ILS" data-flag="il">ILS - Novo Shekel Israelense</option>
+									<option value="AED" data-flag="ae">AED - Dirham dos Emirados</option>
+									<option value="SAR" data-flag="sa">SAR - Riyal Saudita</option>
+									<option value="QAR" data-flag="qa">QAR - Riyal Catarense</option>
+									<option value="THB" data-flag="th">THB - Baht Tailandês</option>
+									<option value="IDR" data-flag="id">IDR - Rupia Indonésia</option>
+									<option value="MYR" data-flag="my">MYR - Ringgit Malaio</option>
+									<option value="PHP" data-flag="ph">PHP - Peso Filipino</option>
+
+									<option value="BTC" data-flag="crypto">BTC - Bitcoin</option>
+									<option value="ETH" data-flag="crypto">ETH - Ethereum</option>
+									<option value="USDT" data-flag="crypto">USDT - Tether</option>
+									<option value="BNB" data-flag="crypto">BNB - Binance Coin</option>
+									<option value="SOL" data-flag="crypto">SOL - Solana</option>
+									<option value="XRP" data-flag="crypto">XRP - XRP</option>
+									<option value="ADA" data-flag="crypto">ADA - Cardano</option>
+									<option value="DOGE" data-flag="crypto">DOGE - Dogecoin</option>
+									<option value="DOT" data-flag="crypto">DOT - Polkadot</option>
+									<option value="LTC" data-flag="crypto">LTC - Litecoin</option>
+									<option value="BCH" data-flag="crypto">BCH - Bitcoin Cash</option>
+									<option value="LINK" data-flag="crypto">LINK - Chainlink</option>
+									<option value="MATIC" data-flag="crypto">MATIC - Polygon</option>
                             </select>
                         </div>
 
@@ -194,15 +227,39 @@
                             <label for="toCurrency">Moeda de destino</label>
 
                             <select id="toCurrency">
-                                <option value="BRL">🇧🇷 BRL - Real Brasileiro</option>
-                                <option value="USD">🇺🇸 USD - Dólar Americano</option>
-                                <option value="EUR">🇪🇺 EUR - Euro</option>
-                                <option value="GBP">🇬🇧 GBP - Libra Esterlina</option>
-                                <option value="JPY">🇯🇵 JPY - Iene Japonês</option>
-                                <option value="CHF">🇨🇭 CHF - Franco Suíço</option>
-                                <option value="CAD">🇨🇦 CAD - Dólar Canadense</option>
-                                <option value="AUD">🇦🇺 AUD - Dólar Australiano</option>
-                                <option value="ARS">🇦🇷 ARS - Peso Argentino</option>
+                                <option value="BRL" data-flag="br">BRL - Real Brasileiro</option>
+									<option value="USD" data-flag="us">USD - Dólar Americano</option>
+									<option value="EUR" data-flag="eu">EUR - Euro</option>
+									<option value="GBP" data-flag="gb">GBP - Libra Esterlina</option>
+									<option value="JPY" data-flag="jp">JPY - Iene Japonês</option>
+									<option value="CHF" data-flag="ch">CHF - Franco Suíço</option>
+									<option value="CAD" data-flag="ca">CAD - Dólar Canadense</option>
+									<option value="AUD" data-flag="au">AUD - Dólar Australiano</option>
+									<option value="NZD" data-flag="nz">NZD - Dólar Neozelandês</option>
+									<option value="ARS" data-flag="ar">ARS - Peso Argentino</option>
+									<option value="CLP" data-flag="cl">CLP - Peso Chileno</option>
+									<option value="UYU" data-flag="uy">UYU - Peso Uruguaio</option>
+									<option value="MXN" data-flag="mx">MXN - Peso Mexicano</option>
+									<option value="CNY" data-flag="cn">CNY - Yuan Chinês</option>
+									<option value="HKD" data-flag="hk">HKD - Dólar de Hong Kong</option>
+									<option value="SGD" data-flag="sg">SGD - Dólar de Singapura</option>
+									<option value="KRW" data-flag="kr">KRW - Won Sul-Coreano</option>
+									<option value="INR" data-flag="in">INR - Rúpia Indiana</option>
+									<option value="RUB" data-flag="ru">RUB - Rublo Russo</option>
+									<option value="TRY" data-flag="tr">TRY - Lira Turca</option>
+									<option value="ZAR" data-flag="za">ZAR - Rand Sul-Africano</option>
+									<option value="SEK" data-flag="se">SEK - Coroa Sueca</option>
+									<option value="NOK" data-flag="no">NOK - Coroa Norueguesa</option>
+									<option value="DKK" data-flag="dk">DKK - Coroa Dinamarquesa</option>
+									<option value="PLN" data-flag="pl">PLN - Zlóti Polonês</option>
+									<option value="ILS" data-flag="il">ILS - Novo Shekel Israelense</option>
+									<option value="AED" data-flag="ae">AED - Dirham dos Emirados</option>
+									<option value="SAR" data-flag="sa">SAR - Riyal Saudita</option>
+									<option value="QAR" data-flag="qa">QAR - Riyal Catarense</option>
+									<option value="THB" data-flag="th">THB - Baht Tailandês</option>
+									<option value="IDR" data-flag="id">IDR - Rupia Indonésia</option>
+									<option value="MYR" data-flag="my">MYR - Ringgit Malaio</option>
+									<option value="PHP" data-flag="ph">PHP - Peso Filipino</option>
                             </select>
                         </div>
 
