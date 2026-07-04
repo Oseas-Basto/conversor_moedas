@@ -2269,3 +2269,28 @@ header{
 .actions{
     align-items: center;
 }
+
+
+
+/* ==========================================================
+   CORREÇÃO DO TÍTULO NO CELULAR
+========================================================== */
+
+@media (max-width: 900px){
+    .hero h2{
+        white-space: normal !important;
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+        line-height: 1.15;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+}
+
+@media (max-width: 480px){
+    .hero h2{
+        font-size: clamp(1.7rem, 9vw, 2.2rem);
+        line-height: 1.18;
+    }
+}
