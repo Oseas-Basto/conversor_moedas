@@ -6,7 +6,7 @@
 
 const App = (() => {
     const VERSION = "1.0.0";
-    const SITE_URL = "https://oseas-basto.github.io/conversor-moedas/";
+    const SITE_URL = "https://conversordemoedas.top/";
 
     let marketTimer = null;
 
@@ -20,8 +20,6 @@ const App = (() => {
         if (typeof Theme === "undefined") missing.push("Theme");
         if (typeof Dashboard === "undefined") missing.push("Dashboard");
         if (typeof Converter === "undefined") missing.push("Converter");
-		if (typeof News === "undefined") missing.push("News");
-		
 
         if (missing.length > 0) {
             console.error("[Conversor] Arquivos JS não carregados:", missing.join(", "));
@@ -182,7 +180,6 @@ const App = (() => {
 
         Dashboard.init();
         Converter.init();
-		News.init();
 
         startAutoUpdates();
 
