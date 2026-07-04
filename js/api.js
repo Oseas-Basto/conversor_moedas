@@ -145,19 +145,25 @@ const API = (() => {
     }
 
     async function preload() {
-        try {
-            await getMultipleQuotes([
-                "USD-BRL",
-                "EUR-BRL",
-                "GBP-BRL",
-                "BTC-BRL",
-                "ETH-BRL",
-                "SOL-BRL"
-            ]);
-        } catch (error) {
-            console.warn("[API] Falha no pré-carregamento.", error);
-        }
-    }
+		try {
+			await getMultipleQuotes([
+				"USD-BRL",
+				"EUR-BRL",
+				"GBP-BRL",
+				"BTC-BRL",
+				"ETH-BRL",
+				"USDT-BRL",
+				"BNB-BRL",
+				"SOL-BRL",
+				"XRP-BRL",
+				"ADA-BRL",
+				"DOGE-BRL",
+				"LTC-BRL"
+			]);
+		} catch (error) {
+			console.warn("[API] Falha no pré-carregamento.", error);
+		}
+	}
 
     function formatNumber(value, options = {}) {
         const number = Number(value);

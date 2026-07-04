@@ -6,49 +6,91 @@
 
 const Dashboard = (() => {
     const PAIRS = [
-        {
-            key: "USDBRL",
-            pair: "USD-BRL",
-            name: "Dólar",
-            code: "USD",
-            selector: "#usdPrice"
-        },
-        {
-            key: "EURBRL",
-            pair: "EUR-BRL",
-            name: "Euro",
-            code: "EUR",
-            selector: "#eurPrice"
-        },
-        {
-            key: "GBPBRL",
-            pair: "GBP-BRL",
-            name: "Libra",
-            code: "GBP",
-            selector: "#gbpPrice"
-        },
-        {
-            key: "BTCBRL",
-            pair: "BTC-BRL",
-            name: "Bitcoin",
-            code: "BTC",
-            selector: "#btcPrice"
-        },
-        {
-            key: "ETHBRL",
-            pair: "ETH-BRL",
-            name: "Ethereum",
-            code: "ETH",
-            selector: "#ethPrice"
-        },
-        {
-            key: "SOLBRL",
-            pair: "SOL-BRL",
-            name: "Solana",
-            code: "SOL",
-            selector: "#solPrice"
-        }
-    ];
+		{
+			key: "USDBRL",
+			pair: "USD-BRL",
+			name: "Dólar",
+			code: "USD",
+			selector: "#usdPrice"
+		},
+		{
+			key: "EURBRL",
+			pair: "EUR-BRL",
+			name: "Euro",
+			code: "EUR",
+			selector: "#eurPrice"
+		},
+		{
+			key: "GBPBRL",
+			pair: "GBP-BRL",
+			name: "Libra",
+			code: "GBP",
+			selector: "#gbpPrice"
+		},
+		{
+			key: "BTCBRL",
+			pair: "BTC-BRL",
+			name: "Bitcoin",
+			code: "BTC",
+			selector: "#btcPrice"
+		},
+		{
+			key: "ETHBRL",
+			pair: "ETH-BRL",
+			name: "Ethereum",
+			code: "ETH",
+			selector: "#ethPrice"
+		},
+		{
+			key: "USDTBRL",
+			pair: "USDT-BRL",
+			name: "Tether",
+			code: "USDT",
+			selector: null
+		},
+		{
+			key: "BNBBRL",
+			pair: "BNB-BRL",
+			name: "BNB",
+			code: "BNB",
+			selector: null
+		},
+		{
+			key: "SOLBRL",
+			pair: "SOL-BRL",
+			name: "Solana",
+			code: "SOL",
+			selector: "#solPrice"
+		},
+		{
+			key: "XRPBRL",
+			pair: "XRP-BRL",
+			name: "XRP",
+			code: "XRP",
+			selector: null
+		},
+		{
+			key: "ADABRL",
+			pair: "ADA-BRL",
+			name: "Cardano",
+			code: "ADA",
+			selector: null
+		},
+		{
+			key: "DOGEBRL",
+			pair: "DOGE-BRL",
+			name: "Dogecoin",
+			code: "DOGE",
+			selector: null
+		},
+		{
+			key: "LTCBRL",
+			pair: "LTC-BRL",
+			name: "Litecoin",
+			code: "LTC",
+			selector: null
+		}
+	];
 
     let lastQuotes = {};
 
@@ -87,6 +129,8 @@ const Dashboard = (() => {
             const quote = getQuote(item, quotes);
 
             if (!quote) return;
+			
+			if (!item.selector) return;
 
             const element = UI.$(item.selector);
 
