@@ -1,0 +1,117 @@
+{
+    "name": "Conversor de Moedas",
+    "short_name": "Conversor",
+    "description": "Conversor online gratuito de moedas e criptomoedas com cotações em tempo real.",
+    "id": "/conversor-moedas/",
+    "start_url": "/conversor-moedas/",
+    "scope": "/conversor-moedas/",
+    "display": "standalone",
+    "display_override": [
+        "window-controls-overlay",
+        "standalone",
+        "browser"
+    ],
+    "orientation": "portrait-primary",
+    "background_color": "#ffffff",
+    "theme_color": "#0d6efd",
+    "lang": "pt-BR",
+    "dir": "ltr",
+    "categories": [
+        "finance",
+        "productivity",
+        "utilities"
+    ],
+    "icons": [
+        {
+            "src": "assets/icon-72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icon-96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icon-128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icon-180.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icon-256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icon-384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/preview.jpg",
+            "sizes": "1200x630",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "Tela inicial do Conversor de Moedas"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Converter moedas",
+            "short_name": "Converter",
+            "description": "Abrir o conversor de moedas",
+            "url": "/conversor-moedas/#converter",
+            "icons": [
+                {
+                    "src": "assets/icon-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Ver cotações",
+            "short_name": "Cotações",
+            "description": "Abrir o painel de cotações",
+            "url": "/conversor-moedas/#cotacoes",
+            "icons": [
+                {
+                    "src": "assets/icon-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ]
+}

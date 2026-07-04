@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conversor de Moedas Online | Dólar, Euro, Bitcoin e Criptomoedas</title>
+
+    <meta name="description"
+        content="Conversor de moedas online gratuito com cotações em tempo real. Converta dólar, euro, libra, real brasileiro, bitcoin, ethereum e diversas criptomoedas.">
+
+    <meta name="keywords"
+        content="conversor de moedas, cotação do dólar, dólar hoje, euro hoje, bitcoin, ethereum, criptomoedas, câmbio, real brasileiro, conversor online">
+
+    <meta name="author" content="Oséas Basto">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0d6efd">
+
+    <link rel="canonical" href="https://oseas-basto.github.io/conversor-moedas/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Conversor de Moedas Online">
+    <meta property="og:description"
+        content="Converta moedas e criptomoedas em tempo real com cotações atualizadas automaticamente.">
+    <meta property="og:url" content="https://oseas-basto.github.io/conversor-moedas/">
+    <meta property="og:image" content="https://oseas-basto.github.io/conversor-moedas/assets/preview.jpg">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Conversor de Moedas Online">
+    <meta name="twitter:description"
+        content="Conversor gratuito de moedas e criptomoedas em tempo real.">
+    <meta name="twitter:image" content="https://oseas-basto.github.io/conversor-moedas/assets/preview.jpg">
+
+    <!-- Favicons / PWA -->
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Analytics GA4 -->
+    <!-- Troque G-XXXXXXXXXX pelo seu ID real do Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+        gtag("config", "G-XXXXXXXXXX");
+    </script>
+
+    <!-- Google AdSense -->
+    <!-- O client já está configurado com seu código informado anteriormente -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1789274466160316"
+        crossorigin="anonymous"></script>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Conversor de Moedas",
+        "url": "https://oseas-basto.github.io/conversor-moedas/",
+        "description": "Conversor de moedas online gratuito com cotações em tempo real.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "author": {
+            "@type": "Person",
+            "name": "Oséas Basto"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BRL"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+	<div class="news-ticker" aria-label="Notícias do mercado financeiro">
+		<div class="news-ticker-label">
+			Mercado
+		</div>
+
+		<div class="news-ticker-wrapper">
+			<div id="newsTickerContent" class="news-ticker-content">
+				<span>Carregando notícias do mercado financeiro...</span>
+			</div>
+		</div>
+	</div>
+
+    <header>
+        <div class="container">
+
+            <a href="index.html" class="logo" aria-label="Página inicial">
+				<img src="assets/logo.svg" alt="Conversor de Moedas">
+			</a>
+
+            <nav aria-label="Menu principal">
+                <ul>
+                    <li><a href="#converter">Conversor</a></li>
+                    <li><a href="#cotacoes">Cotações</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#favoritos">Favoritos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+
+                    <li>
+                        <button id="themeButton" type="button" aria-label="Alternar tema">
+                            🌙
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+	
+		
+        <section class="hero">
+            <div class="container">
+
+                <div class="hero-text fade-up">
+                    <h2>
+                        Conversor de Moedas e Criptomoedas em Tempo Real
+                    </h2
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="converter" class="converter-section">
+            <div class="container">
+
+                <div class="converter-card fade-up">
+
+                    <h2>Converter moedas</h2>
+
+                    <div class="converter-grid">
+
+                        <div class="field">
+                            <label for="fromCurrency">Moeda de origem</label>
+
+                            <select id="fromCurrency">
+                                <option value="USD">🇺🇸 USD - Dólar Americano</option>
+                                <option value="EUR">🇪🇺 EUR - Euro</option>
+                                <option value="BRL">🇧🇷 BRL - Real Brasileiro</option>
+                                <option value="GBP">🇬🇧 GBP - Libra Esterlina</option>
+                                <option value="JPY">🇯🇵 JPY - Iene Japonês</option>
+                                <option value="CHF">🇨🇭 CHF - Franco Suíço</option>
+                                <option value="CAD">🇨🇦 CAD - Dólar Canadense</option>
+                                <option value="AUD">🇦🇺 AUD - Dólar Australiano</option>
+                                <option value="ARS">🇦🇷 ARS - Peso Argentino</option>
+                                <option value="BTC">₿ BTC - Bitcoin</option>
+                                <option value="ETH">Ξ ETH - Ethereum</option>
+                                <option value="USDT">₮ USDT - Tether</option>
+                                <option value="BNB">BNB - Binance Coin</option>
+                                <option value="SOL">SOL - Solana</option>
+                            </select>
+                        </div>
+
+                        <div class="swap">
+                            <button id="swapCurrencies" type="button" aria-label="Inverter moedas">
+                                ⇄
+                            </button>
+                        </div>
+
+                        <div class="field">
+                            <label for="toCurrency">Moeda de destino</label>
+
+                            <select id="toCurrency">
+                                <option value="BRL">🇧🇷 BRL - Real Brasileiro</option>
+                                <option value="USD">🇺🇸 USD - Dólar Americano</option>
+                                <option value="EUR">🇪🇺 EUR - Euro</option>
+                                <option value="GBP">🇬🇧 GBP - Libra Esterlina</option>
+                                <option value="JPY">🇯🇵 JPY - Iene Japonês</option>
+                                <option value="CHF">🇨🇭 CHF - Franco Suíço</option>
+                                <option value="CAD">🇨🇦 CAD - Dólar Canadense</option>
+                                <option value="AUD">🇦🇺 AUD - Dólar Australiano</option>
+                                <option value="ARS">🇦🇷 ARS - Peso Argentino</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="field amount">
+                        <label for="amount">Valor</label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="Digite um valor"
+                            value="1"
+                            min="0"
+                            step="0.01">
+                    </div>
+
+                    <div class="actions">
+                        <button id="convertButton" type="button" class="btn-primary">
+                            Converter
+                        </button>
+
+                        <button id="copyButton" type="button" class="btn-secondary">
+                            Copiar resultado
+                        </button>
+
+                        <button id="favoriteButton" type="button" class="btn-secondary">
+                            Favoritar par
+                        </button>
+                    </div>
+
+                    <div class="result-card">
+
+                        <div class="loading hidden" id="loading">
+                            <div class="spinner"></div>
+                            <p>Consultando cotação...</p>
+                        </div>
+
+                        <div id="resultContainer">
+                            <h3>Resultado</h3>
+
+                            <h2 id="resultValue">--</h2>
+
+                            <div class="quotation">
+
+                                <div>
+                                    <span>Cotação</span>
+                                    <strong id="exchangeRate">--</strong>
+                                </div>
+
+                                <div>
+                                    <span>Máxima</span>
+                                    <strong id="highValue">--</strong>
+                                </div>
+
+                                <div>
+                                    <span>Mínima</span>
+                                    <strong id="lowValue">--</strong>
+                                </div>
+
+                            </div>
+
+                            <p id="lastUpdate" class="last-update">
+                                Última atualização: --
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="cotacoes" class="market-section">
+            <div class="container">
+
+                <h2>Principais Cotações</h2>
+
+                <div class="market-grid">
+
+                    <article class="market-card">
+                        <span>Dólar</span>
+                        <strong id="usdPrice">--</strong>
+                    </article>
+
+                    <article class="market-card">
+                        <span>Euro</span>
+                        <strong id="eurPrice">--</strong>
+                    </article>
+
+                    <article class="market-card">
+                        <span>Libra</span>
+                        <strong id="gbpPrice">--</strong>
+                    </article>
+
+                    <article class="market-card">
+                        <span>Bitcoin</span>
+                        <strong id="btcPrice">--</strong>
+                    </article>
+
+                    <article class="market-card">
+                        <span>Ethereum</span>
+                        <strong id="ethPrice">--</strong>
+                    </article>
+
+                    <article class="market-card">
+                        <span>Solana</span>
+                        <strong id="solPrice">--</strong>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="dashboard" class="market-section">
+            <div class="container">
+
+                <h2>Dashboard Financeiro</h2>
+
+                <p class="text-center mb-4">
+                    Acompanhe máxima, mínima, variação e atualização das principais moedas.
+                </p>
+
+                <div id="dashboardList" class="market-grid"></div>
+
+            </div>
+        </section>
+
+        <section id="favoritos" class="history-section">
+            <div class="container">
+
+                <h2>Pares Favoritos</h2>
+
+                <div id="favoritesList" class="history-list"></div>
+
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="container">
+
+                <h2>Histórico de Conversões</h2>
+
+                <div id="historyList" class="history-list"></div>
+
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="container">
+
+                <h2>Conversão de Criptomoedas</h2>
+
+                <p>
+                    Consulte o valor atualizado das principais criptomoedas do mercado,
+                    incluindo bitcoin, ethereum, tether, BNB e solana.
+                </p>
+
+                <div class="features">
+
+                    <article>
+                        <h3>Bitcoin</h3>
+                        <p>
+                            Acompanhe a cotação do bitcoin em relação ao real brasileiro
+                            e outras moedas.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Ethereum</h3>
+                        <p>
+                            Consulte a cotação do ethereum, uma das principais redes de
+                            contratos inteligentes.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Stablecoins</h3>
+                        <p>
+                            Verifique valores de moedas digitais pareadas ao dólar,
+                            como USDT.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <article>
+                        <h2>Conversor de Moedas Online</h2>
+
+                        <p>
+                            O ConversorMoedas foi criado para oferecer uma ferramenta
+                            simples e gratuita para consultas rápidas de câmbio.
+                        </p>
+
+                        <p>
+                            Os dados são obtidos por API pública e devem ser usados
+                            apenas como referência informativa.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h2>Recursos do site</h2>
+
+                        <ul class="resource-list">
+                            <li>✔ Conversão em tempo real</li>
+                            <li>✔ Dashboard financeiro</li>
+                            <li>✔ Histórico salvo no navegador</li>
+                            <li>✔ Pares favoritos</li>
+                            <li>✔ Tema claro e escuro</li>
+                            <li>✔ Compatível com celular</li>
+                            <li>✔ Instalação como PWA</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+
+                <h2>Perguntas Frequentes</h2>
+
+                <details>
+                    <summary>De onde vêm as cotações?</summary>
+                    <p>
+                        As cotações são obtidas através da AwesomeAPI, uma API pública
+                        de dados financeiros.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>As cotações são em tempo real?</summary>
+                    <p>
+                        As informações são atualizadas periodicamente conforme a
+                        disponibilidade da API.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>O conversor é gratuito?</summary>
+                    <p>
+                        Sim. O uso do ConversorMoedas é gratuito.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Posso usar os dados para operações financeiras?</summary>
+                    <p>
+                        Os dados são apenas informativos. Antes de realizar operações
+                        financeiras, consulte bancos, corretoras ou instituições autorizadas.
+                    </p>
+                </details>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+
+            <div>
+                <h3>ConversorMoedas</h3>
+
+                <p>
+                    Conversor gratuito de moedas e criptomoedas atualizado em tempo real.
+                </p>
+            </div>
+
+            <div>
+                <h3>Navegação</h3>
+
+                <ul>
+                    <li><a href="#converter">Conversor</a></li>
+                    <li><a href="#cotacoes">Cotações</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#favoritos">Favoritos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Institucional</h3>
+
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                    <li><a href="termos-uso.html">Termos de Uso</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>
+                © 2026 ConversorMoedas — Desenvolvido por Oséas Basto.
+            </p>
+        </div>
+    </footer>
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+
+            <p>
+                Este site utiliza cookies para melhorar sua experiência,
+                analisar tráfego e exibir anúncios personalizados.
+            </p>
+
+            <button id="acceptCookies" type="button">
+                Aceitar
+            </button>
+
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script defer src="js/api.js"></script>
+	<script defer src="js/ui.js"></script>
+	<script defer src="js/history.js"></script>
+	<script defer src="js/favorites.js"></script>
+	<script defer src="js/theme.js"></script>
+	<script defer src="js/dashboard.js"></script>
+	<script defer src="js/converter.js"></script>
+	<script defer src="js/news.js"></script>
+	<script defer src="js/app.js"></script>
+	
+
+</body>
+
+</html>
