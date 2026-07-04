@@ -2,9 +2,9 @@
     "name": "Conversor de Moedas",
     "short_name": "Conversor",
     "description": "Conversor online gratuito de moedas e criptomoedas com cotações em tempo real.",
-    "id": "/conversor-moedas/",
-    "start_url": "/conversor-moedas/",
-    "scope": "/conversor-moedas/",
+    "id": "/conversor_moedas/",
+    "start_url": "/conversor_moedas/",
+    "scope": "/conversor_moedas/",
     "display": "standalone",
     "display_override": [
         "window-controls-overlay",
@@ -91,7 +91,7 @@
             "name": "Converter moedas",
             "short_name": "Converter",
             "description": "Abrir o conversor de moedas",
-            "url": "/conversor-moedas/#converter",
+            "url": "/conversor_moedas/#converter",
             "icons": [
                 {
                     "src": "assets/icon-192.png",
@@ -104,7 +104,7 @@
             "name": "Ver cotações",
             "short_name": "Cotações",
             "description": "Abrir o painel de cotações",
-            "url": "/conversor-moedas/#cotacoes",
+            "url": "/conversor_moedas/#cotacoes",
             "icons": [
                 {
                     "src": "assets/icon-192.png",
