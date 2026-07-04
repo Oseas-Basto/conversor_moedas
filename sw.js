@@ -4,7 +4,7 @@
    Service Worker / PWA
 ========================================================== */
 
-const CACHE_VERSION = "v1.0.1";
+const CACHE_VERSION = "v1.0.2";
 const CACHE_NAME = `conversor-moedas-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -30,6 +30,7 @@ const APP_SHELL = [
     "./assets/icon-192.png",
     "./assets/icon-512.png",
     "./assets/preview.jpg"
+	"./ads.txt",
 ];
 
 const OFFLINE_FALLBACK = "./404.html";
