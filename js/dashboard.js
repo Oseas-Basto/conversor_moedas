@@ -49,13 +49,6 @@ const Dashboard = (() => {
 			selector: null
 		},
 		{
-			key: "BNBBRL",
-			pair: "BNB-BRL",
-			name: "BNB",
-			code: "BNB",
-			selector: null
-		},
-		{
 			key: "SOLBRL",
 			pair: "SOL-BRL",
 			name: "Solana",

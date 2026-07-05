@@ -115,20 +115,28 @@ const API = (() => {
     }
 
     async function getMultipleQuotes(pairs = []) {
-        if (!Array.isArray(pairs) || pairs.length === 0) {
-            return {};
-        }
+		if (!Array.isArray(pairs) || pairs.length === 0) {
+			return {};
+		}
 
-        const cleanPairs = pairs
-            .filter(Boolean)
-            .map(pair => String(pair).toUpperCase().trim());
+		const results = {};
 
-        if (!cleanPairs.length) {
-            return {};
-        }
+		await Promise.allSettled(
+			pairs.map(async pair => {
+				try {
+					const normalizedPair = String(pair).trim().toUpperCase();
+					const endpoint = `/last/${normalizedPair}`;
+					const data = await request(endpoint);
 
-        return retry(() => request(`last/${cleanPairs.join(",")}`));
-    }
+					Object.assign(results, data);
+				} catch (error) {
+					console.warn(`[API] Par ignorado por falha: ${pair}`, error);
+				}
+			})
+		);
+
+		return results;
+	}
 
     async function getDailyHistory(from, to, days = 30) {
         if (!from || !to) {
@@ -144,7 +152,7 @@ const API = (() => {
         return retry(() => request("available"));
     }
 
-    async function preload() {
+	async function preload() {
 		try {
 			await getMultipleQuotes([
 				"USD-BRL",
@@ -153,7 +161,6 @@ const API = (() => {
 				"BTC-BRL",
 				"ETH-BRL",
 				"USDT-BRL",
-				"BNB-BRL",
 				"SOL-BRL",
 				"XRP-BRL",
 				"ADA-BRL"

@@ -165,33 +165,50 @@ const App = (() => {
     }
 
     async function init() {
-        console.info(`[Conversor] Iniciando aplicação v${VERSION}`);
+    console.info(`[Conversor] Iniciando aplicação v${VERSION}`);
 
-        if (!checkDependencies()) {
-            return;
-        }
+    if (!checkDependencies()) {
+        return;
+		}
 
-        UI.init();
-        Theme.init();
-        History.init();
-        Favorites.init();
+		UI.init();
+		Theme.init();
+		History.init();
+		Favorites.init();
 
-        await preloadData();
+		Converter.init();
 
-        Dashboard.init();
-        Converter.init();
+		setupOnlineStatus();
+		setupKeyboardShortcuts();
+		setupShareButton();
+		setupInstallPrompt();
+		exposeDebugInfo();
 
-        startAutoUpdates();
+		setTimeout(async () => {
+			if (typeof API !== "undefined") {
+				await API.preload();
+			}
+		}, 1000);
 
-        setupOnlineStatus();
-        setupKeyboardShortcuts();
-        setupShareButton();
-        setupInstallPrompt();
-        registerServiceWorker();
-        exposeDebugInfo();
+		setTimeout(() => {
+			if (typeof Dashboard !== "undefined") {
+				Dashboard.init();
+				startAutoUpdates();
+			}
+		}, 1800);
 
-        console.info("[Conversor] Aplicação iniciada com sucesso.");
-    }
+		setTimeout(() => {
+			if (typeof News !== "undefined") {
+				News.init();
+			}
+		}, 2500);
+
+		setTimeout(() => {
+			registerServiceWorker();
+		}, 4000);
+
+		console.info("[Conversor] Aplicação iniciada com sucesso.");
+	}
 
     return {
         init,
