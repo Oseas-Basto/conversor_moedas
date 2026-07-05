@@ -156,9 +156,7 @@ const API = (() => {
 				"BNB-BRL",
 				"SOL-BRL",
 				"XRP-BRL",
-				"ADA-BRL",
-				"DOGE-BRL",
-				"LTC-BRL"
+				"ADA-BRL"
 			]);
 		} catch (error) {
 			console.warn("[API] Falha no pré-carregamento.", error);

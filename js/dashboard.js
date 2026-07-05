@@ -75,20 +75,6 @@ const Dashboard = (() => {
 			name: "Cardano",
 			code: "ADA",
 			selector: null
-		},
-		{
-			key: "DOGEBRL",
-			pair: "DOGE-BRL",
-			name: "Dogecoin",
-			code: "DOGE",
-			selector: null
-		},
-		{
-			key: "LTCBRL",
-			pair: "LTC-BRL",
-			name: "Litecoin",
-			code: "LTC",
-			selector: null
 		}
 	];
 
