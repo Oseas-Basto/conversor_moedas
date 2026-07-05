@@ -1,10 +1,4 @@
-/* ==========================================================
-   Conversor de Moedas
-   sw.js
-   Service Worker / PWA
-========================================================== */
-
-const CACHE_VERSION = "v1.0.2";
+const CACHE_VERSION = "v1.0.4";
 const CACHE_NAME = `conversor-moedas-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -14,8 +8,13 @@ const APP_SHELL = [
     "./sobre.html",
     "./politica-privacidade.html",
     "./termos-uso.html",
+    "./ads.txt",
+    "./robots.txt",
+    "./sitemap.xml",
     "./site.webmanifest",
+
     "./css/styles.css",
+
     "./js/api.js",
     "./js/ui.js",
     "./js/history.js",
@@ -23,38 +22,28 @@ const APP_SHELL = [
     "./js/theme.js",
     "./js/dashboard.js",
     "./js/converter.js",
+    "./js/news.js",
     "./js/app.js",
+
     "./assets/logo.svg",
     "./assets/favicon.ico",
     "./assets/apple-touch-icon.png",
     "./assets/icon-192.png",
     "./assets/icon-512.png",
     "./assets/preview.jpg"
-	"./ads.txt",
 ];
 
-const OFFLINE_FALLBACK = "./404.html";
-
-/* ==========================================================
-   INSTALL
-========================================================== */
-
 self.addEventListener("install", event => {
-    self.skipWaiting();
-
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
                 return Promise.allSettled(
-                    APP_SHELL.map(file => cache.add(file))
+                    APP_SHELL.map(url => cache.add(url))
                 );
             })
+            .then(() => self.skipWaiting())
     );
 });
-
-/* ==========================================================
-   ACTIVATE
-========================================================== */
 
 self.addEventListener("activate", event => {
     event.waitUntil(
@@ -70,20 +59,12 @@ self.addEventListener("activate", event => {
     );
 });
 
-/* ==========================================================
-   HELPERS
-========================================================== */
-
 function isHttpRequest(request) {
     return request.url.startsWith("http");
 }
 
 function isSameOrigin(request) {
     return new URL(request.url).origin === self.location.origin;
-}
-
-function isNavigationRequest(request) {
-    return request.mode === "navigate";
 }
 
 function isApiRequest(request) {
@@ -94,23 +75,20 @@ async function networkFirst(request) {
     try {
         const response = await fetch(request);
 
-        const cache = await caches.open(CACHE_NAME);
-
-        cache.put(request, response.clone());
+        if (response && response.ok) {
+            const cache = await caches.open(CACHE_NAME);
+            cache.put(request, response.clone());
+        }
 
         return response;
-    } catch {
+    } catch (error) {
         const cached = await caches.match(request);
 
         if (cached) {
             return cached;
         }
 
-        if (isNavigationRequest(request)) {
-            return caches.match(OFFLINE_FALLBACK);
-        }
-
-        throw new Error("Recurso indisponível offline.");
+        throw error;
     }
 }
 
@@ -123,22 +101,18 @@ async function cacheFirst(request) {
 
     const response = await fetch(request);
 
-    const cache = await caches.open(CACHE_NAME);
-
-    cache.put(request, response.clone());
+    if (response && response.ok) {
+        const cache = await caches.open(CACHE_NAME);
+        cache.put(request, response.clone());
+    }
 
     return response;
 }
-
-/* ==========================================================
-   FETCH
-========================================================== */
 
 self.addEventListener("fetch", event => {
     const { request } = event;
 
     if (request.method !== "GET") return;
-
     if (!isHttpRequest(request)) return;
 
     if (isApiRequest(request)) {
@@ -154,10 +128,6 @@ self.addEventListener("fetch", event => {
     event.respondWith(networkFirst(request));
 });
 
-/* ==========================================================
-   MESSAGE
-========================================================== */
-
 self.addEventListener("message", event => {
     if (!event.data) return;
 
@@ -167,12 +137,9 @@ self.addEventListener("message", event => {
 
     if (event.data.type === "CLEAR_CACHE") {
         event.waitUntil(
-            caches.keys()
-                .then(keys => {
-                    return Promise.all(
-                        keys.map(key => caches.delete(key))
-                    );
-                })
+            caches.keys().then(keys => {
+                return Promise.all(keys.map(key => caches.delete(key)));
+            })
         );
     }
 });
